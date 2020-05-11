@@ -24,7 +24,7 @@ const getOauth2Client = ({
   return oAuth2Client;
 };
 
-const withAuth = async (gmailAction) => async (...args) => {
+const withAuth = async (gmailAction) => async (args) => {
   if (!process.env.credentials) {
     console.log('Could not find credentials!');
     return;
@@ -57,7 +57,7 @@ const withAuth = async (gmailAction) => async (...args) => {
     token: authToken,
   });
   /* eslint-disable-next-line consistent-return */
-  return gmailAction(oauth2Client, ...args).then((resp) => resp);
+  return gmailAction({ auth: oauth2Client, ...args }).then((resp) => resp);
 };
 
 module.exports = {

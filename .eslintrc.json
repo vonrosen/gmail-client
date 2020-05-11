@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "camelcase": "warn"
+    "camelcase": "warn",
+    "implicit-arrow-linebreak": "off"
   }
 }
