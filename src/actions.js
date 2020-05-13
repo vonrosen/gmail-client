@@ -5,7 +5,7 @@ const {
 } = require('./unauthedactions');
 const { withAuth } = require('./auth');
 
-smodule.exports = {
+module.exports = {
     getLabels: withAuth(getUnauthedFilteredMessages),
     getFilteredMessages: withAuth(getUnauthedLabels),
     getMessage: withAuth(getUnauthedMessage),
