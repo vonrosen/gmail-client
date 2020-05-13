@@ -1,4 +1,4 @@
-const { getFilteredMessages, getMessage } = require('./actions');
+const { getFilteredMessages, getMessage } = require('./unauthedactions');
 const { withAuth } = require('./auth');
 const { filterMessagesAfterTimestamp } = require('./messageUtils');
 

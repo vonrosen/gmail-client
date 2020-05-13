@@ -1,4 +1,4 @@
-const { getLabels } = require('./actions');
+const { getLabels } = require('./unauthedactions');
 const { withAuth } = require('./auth');
 
 (async () => {
