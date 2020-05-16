@@ -24,7 +24,7 @@ const getOauth2Client = ({
   return oAuth2Client;
 };
 
-const withAuth = async (gmailAction) => async (args) => {
+const withAuth = (gmailAction) => async (args) => {
   if (!process.env.credentials) {
     console.log('Could not find credentials!');
     return;

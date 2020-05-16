@@ -1,14 +1,11 @@
-const { getFilteredMessages, getMessage } = require('./unauthedactions');
-const { withAuth } = require('./auth');
+const { getFilteredMessages, getMessage } = require('./authedactions');
 const { filterMessagesAfterTimestamp } = require('./messageUtils');
 
 (async () => {
-  const authedGetFilteredMessages = await withAuth(getFilteredMessages);
-  const authedGetMessage = await withAuth(getMessage);
-  const messages = await authedGetFilteredMessages({
+  const messages = await getFilteredMessages({
     q: 'subject:Security Alert from:no-reply@accounts.google.com to:forwardtothebiggoal@gmail.com after:2020/05/09',
   });
-  const promises = messages.map(async ({ id }) => authedGetMessage({ id }));
+  const promises = messages.map(async ({ id }) => getMessage({ id }));
   const messagesDetails = await Promise.all(promises);
   console.log(filterMessagesAfterTimestamp({
     messages: messagesDetails,

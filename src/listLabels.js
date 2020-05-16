@@ -1,7 +1,5 @@
-const { getLabels } = require('./unauthedactions');
-const { withAuth } = require('./auth');
+const { getLabels } = require('./authedactions');
 
 (async () => {
-  const authedGetLabels = await withAuth(getLabels);
-  console.log(await authedGetLabels());
+  console.log(await getLabels());
 })();
