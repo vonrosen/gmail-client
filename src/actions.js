@@ -35,5 +35,5 @@ const getMessage = (async ({ auth, id }) => new Promise((resolve, reject) => {
 module.exports = {
   getLabels,
   getFilteredMessages,
-  getMessage
-}
+  getMessage,
+};
