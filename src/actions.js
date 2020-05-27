@@ -21,7 +21,7 @@ const getFilteredMessages = async ({ auth, q }) => new Promise((resolve, reject)
   });
 });
 
-const getMessage = (async ({ auth, id }) => new Promise((resolve, reject) => {
+const getMessage = async ({ auth, id }) => new Promise((resolve, reject) => {
   const gmail = google.gmail({ version: 'v1', auth });
   gmail.users.messages.get({
     userId: 'me',
@@ -30,7 +30,7 @@ const getMessage = (async ({ auth, id }) => new Promise((resolve, reject) => {
     if (err) reject(new Error(`The API returned an error: ${err}`));
     resolve(res.data);
   });
-}));
+});
 
 module.exports = {
   getLabels,
