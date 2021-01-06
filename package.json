@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/vonrosen/gmail-client#readme",
   "dependencies": {
-    "axios": "0.19.1",
+    "axios": "0.21.1",
     "googleapis": "50.0.0",
     "eslint-plugin-import": "2.20.2",
     "eslint-plugin-jsx-a11y": "6.2.3",
